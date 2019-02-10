@@ -10,6 +10,14 @@
     color: #FFF;
     font-size: 15px;
     text-decoration: none;
+    background-color: #8e2de2;;
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
   }
   
   .brand {
@@ -25,12 +33,21 @@
     color: #FFF;
     font-size: 16px;
     text-decoration: none;
-  }
-  /* .meal {
-    align-items: center;
-    color: #fff;
+    background-color: #f5af19;
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
     font-size: 16px;
-  } */
+  }
+   
+  .menu {
+    margin-right: 14px;
+    color: #FFF;
+    font-size: 16px;
+    text-decoration: none;
+  }
   
   .meal  i{
     font-size: 16px;
@@ -121,10 +138,10 @@
       flex: 0 0 20vw;
     }
   
-    .footer {
+    /* .footer {
      
       display: none;
-    }
+    } */
   }
   
   @media screen and (max-width: 768px) {
@@ -176,15 +193,14 @@
     display: inline-block;
     font-size: 16px;
   }
-  /* .row{
-      flex-direction: column;
+
+/* .signup{
+    background-color: #4bc970;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
   } */
-
-  .row {
-    /* order: -1; */
-    /* flex: 1 0 100%; */
-}
-
-/* .menu {
-    margin-right: 20px;
-} */
