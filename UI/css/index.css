@@ -18,6 +18,18 @@
     font-size: 16px;
     
   }
+  .book-meal-summary {
+    margin-right: auto;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #4bc970;
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 
   .book-meal-home {
     margin-right: auto;
@@ -53,6 +65,20 @@
     display: inline-block;
     font-size: 16px;
   }
+  .meal-options-setter {
+    margin-right: 14px;
+    color: #FFF;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #8e2de2;
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
   .meal-options-manage {
     margin-right: 14px;
     color: #FFF;
@@ -66,7 +92,7 @@
     display: inline-block;
   }
   .meal-options-set {
-    margin-right: 14px;
+    /* margin-right: 14px; */
     color: #FFF;
     font-size: 20px;
     text-decoration: none;
@@ -76,6 +102,20 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+  }
+
+  .meal-options-summary {
+    /* margin-right: 14px; */
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: none;
+    background-color: #4bc970;
+    border: none;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
   }
    
   .menu {
@@ -276,7 +316,29 @@
     height: 100%;
     filter: brightness(50%);
   }
-  /* .row-food {
-    position: absolute;
-  } */
   
+  .summary {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .summary th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .summary td, .summary th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .suma {
+    font-size: 22px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+
+  }
+  
+ 
