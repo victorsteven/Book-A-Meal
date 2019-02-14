@@ -1,0 +1,190 @@
+.meal {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .book-meal{
+    margin-right: auto;
+    color: #FFF;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  
+  .brand {
+    margin-right: 14px;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  .meal-options {
+    margin-right: 14px;
+    color: #FFF;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  /* .meal {
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+  } */
+  
+  .meal  i{
+    font-size: 16px;
+  }
+  
+  .signin {
+    margin-right: 10px;
+  }
+  
+  a.signin{
+    background-color: #008CBA; 
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  a.signup{
+    background-color: #4bc970;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  #main > article {
+    flex: 1;
+  }
+  #main > nav,
+  #main > aside {
+    background: beige;
+  }
+  #main > nav {
+    order: -1;
+  }
+  header, footer {
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  
+    /* height: 100%; */
+  
+  }
+  header, footer, article, nav, aside {
+    padding: 0.5em;
+  }
+  button, a {
+    cursor: pointer;
+  }
+  
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+  }
+  
+  @media screen and (min-width: 576px) {
+    #main {
+      flex-direction: row;
+    }
+    #main > nav,
+    #main > aside {
+      flex: 0 0 20vw;
+    }
+  
+    .footer {
+     
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    
+    .footer {
+      display: none;
+    }
+  }
+  
+  .card {
+    width: 20%;
+    height: 40px;
+    margin: 40px;
+    margin-top: 60px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    text-align: center;
+    border: 1px solid #f2f2f2;
+  }
+
+  .flex-it{
+      display: flex;
+      justify-content: space-around;
+      /* text-align: center; */
+      flex-direction: row;
+  }
+
+  .meal-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 5px;
+  }
+  .meal-amount{
+      font-weight: bold;
+  }
+  .meal-order {
+      margin-top: 10px;
+    background-color: #4bc970; 
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  /* .row{
+      flex-direction: column;
+  } */
+
+  .row {
+    /* order: -1; */
+    /* flex: 1 0 100%; */
+}
+
+/* .menu {
+    margin-right: 20px;
+} */
