@@ -1,11 +1,11 @@
 import express from 'express';
-import MealsSerivce from '../services/MealsService';
+import MealsService from '../services/MealsService';
 
-const mealsService = new MealsSerivce();
+// const { getAllMeals } = MealsService;
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.status(200).send(mealsService.getAllMeals());
-});
+
+router.get('/', MealsService.getAllMeals);
+router.post('/', MealsService.addMeal);
 
 export default router;

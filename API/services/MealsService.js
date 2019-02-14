@@ -1,43 +1,27 @@
-import Meals from '../models/Meals';
+import Meal from '../models/Meal';
 
 export default class MealsService {
-  fetchAllMeals() {
-    this.meals = [
-      {
-        id: 1,
-        name: 'Amala and Ewedu',
-        size: 'plates',
-        price: '1500',
-        currency: 'NGN',
-      },
-      {
-        id: 2,
-        name: 'Fried Rice',
-        size: 'plates',
-        price: '800',
-        currency: 'NGN',
-      },
-      {
-        id: 3,
-        name: 'Coconut Rice',
-        size: 'plates',
-        price: '500',
-        currency: 'NGN',
-      },
-    ];
-
-    return this.meals.map((data) => {
-      const meal = new Meals();
-      meal.id = data.id;
-      meal.name = data.name;
-      meal.size = data.size;
-      meal.price = data.price;
-      meal.currency = data.currency;
-      return meal;
+  static getAllMeals(req, res) {
+    return res.status(200).json({
+      status: 200,
+      message: 'Got all meals',
+      data: Meal,
     });
   }
 
-  getAllMeals() {
-    return this.fetchAllMeals();
+  static addMeal(req, res) {
+    const meal = {
+      id: req.body.id,
+      name: req.body.name,
+      size: req.body.size,
+      price: req.body.price,
+      currency: req.body.currency,
+    };
+    Meal.push(meal);
+    return res.status(201).json({
+      status: 201,
+      message: 'Meal added',
+      data: meal,
+    });
   }
 }
