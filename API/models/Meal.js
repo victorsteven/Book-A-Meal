@@ -1,25 +1,10 @@
-const Meal = [
-  {
-    id: 1,
-    name: 'Jollof Rice',
-    size: 'plates',
-    price: '500',
-    currency: 'NGN',
-  },
-  {
-    id: 2,
-    name: 'Fried Rice',
-    size: 'plates',
-    price: '500',
-    currency: 'NGN',
-  },
-  {
-    id: 3,
-    name: 'Coconut Rice',
-    size: 'plates',
-    price: '500',
-    currency: 'NGN',
-  },
-];
+class Meal {
+  constructor() {
+    this.id = null;
+    this.name = null;
+    this.size = null;
+    this.price = null;
+  }
+}
 
 export default Meal;

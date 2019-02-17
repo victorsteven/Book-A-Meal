@@ -1,18 +1,20 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
-import mealsRoute from './routes/mealsRoute';
+// routes
+import mealRoutes from './routes/mealsRoute';
 
 
 const app = express();
+const PORT = 3000;
 
 app.use(bodyParser.json());
-app.use(bodyParser.json({ type: 'application/json' }));
-app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/api/v1/meals', mealsRoute);
+// app.get('/', (req, res) => res.send('The API is working'));
 
-const PORT = 3000;
+// handle
+app.use('/api/v1/meals', mealRoutes);
+
 app.listen(PORT, () => {
-  console.log('listening to port 3000');
+  console.log(`Server is running on PORT ${PORT}`);
 });

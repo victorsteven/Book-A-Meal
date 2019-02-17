@@ -1,11 +1,14 @@
-import express from 'express';
-import MealsService from '../services/MealsService';
+import { Router } from 'express';
 
-// const { getAllMeals } = MealsService;
+import MealController from '../controllers/mealController';
 
-const router = express.Router();
+const router = Router();
 
-router.get('/', MealsService.getAllMeals);
-router.post('/', MealsService.addMeal);
+router.get('/', MealController.fetchAllMeals);
+router.post('/', MealController.addAMeal);
+router.get('/:id', MealController.getSingleMeal);
+router.put('/:id', MealController.updateAMeal);
+router.delete('/:id', MealController.deleteMeal);
+
 
 export default router;
