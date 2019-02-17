@@ -25,7 +25,6 @@ const MealService = {
 
   updateMeal(id, updatedMeal) {
     const theMeal = dummyData.meals.find(oneMeal => oneMeal.id === Number(id));
-
     if (theMeal) {
       theMeal.name = updatedMeal.name;
       theMeal.price = updatedMeal.price;
