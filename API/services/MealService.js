@@ -9,6 +9,8 @@ const MealService = {
       newMeal.name = meal.name;
       newMeal.size = meal.size;
       newMeal.price = meal.price;
+      newMeal.menuId = meal.menuId;
+
       return newMeal;
     });
     return validMeals;
@@ -19,6 +21,7 @@ const MealService = {
     const lastId = dummyData.meals[mealLength - 1].id;
     const newId = lastId + 1;
     meal.id = newId;
+    meal.menuId = 1;
     dummyData.meals.push(meal);
     return meal;
   },
