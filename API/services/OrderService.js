@@ -25,20 +25,14 @@ const OrderService = {
     return order;
   },
 
-  // updateMeal(id, updatedMeal) {
-  //   const theMeal = dummyData.meals.find(oneMeal => oneMeal.id === Number(id));
-  //   if (theMeal) {
-  //     theMeal.name = updatedMeal.name;
-  //     theMeal.price = updatedMeal.price;
-  //     theMeal.size = updatedMeal.size;
-  //   }
-  //   return theMeal;
-  // },
-
-  // getAMeal(id) {
-  //   const meal = dummyData.meals.find(oneMeal => oneMeal.id === Number(id));
-  //   return meal || {};
-  // },
+  modifyOrder(id, modifiedOrder) {
+    const theOrder = dummyData.orders.find(oneOrder => oneOrder.id === Number(id));
+    if (theOrder) {
+      theOrder.name = modifiedOrder.name;
+      theOrder.mealId = modifiedOrder.mealId;
+    }
+    return theOrder;
+  },
 };
 
 export default OrderService;

@@ -6,9 +6,7 @@ const router = Router();
 
 router.get('/', OrdersController.fetchAllOrders);
 router.post('/', OrdersController.selectOrder);
-// router.get('/:id', OrderController.getSingleMeal);
-// router.put('/:id', OrderController.updateAMeal);
-// router.delete('/:id', OrderController.deleteMeal);
+router.put('/:id', OrdersController.modifyOrder);
 
 
 export default router;

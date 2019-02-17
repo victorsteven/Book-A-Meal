@@ -17,31 +17,21 @@ const OrderController = {
     }).status(201);
   },
 
-  // updateAMeal(req, res) {
-  //   const updateMeal = req.body;
-  //   const { id } = req.params;
-  //   if (!Number(id)) {
-  //     return res.status(400).json({
-  //       status: 'error',
-  //       message: 'Invalid ID. ID must be a number',
-  //     });
-  //   }
-  //   const updatedMeal = OrderService.updateMeal(id, updateMeal);
-  //   return res.json({
-  //     status: 'success',
-  //     data: updatedMeal,
-  //   }).status(201);
-  // },
-
-  // getSingleMeal(req, res) {
-  //   const { id } = req.params;
-  //   const foundMeal = OrderService.getAMeal(id);
-  //   console.log('the found meal: ', foundMeal);
-  //   return res.json({
-  //     status: 'success',
-  //     data: foundMeal,
-  //   }).status(200);
-  // },
+  modifyOrder(req, res) {
+    const modifyOrder = req.body;
+    const { id } = req.params;
+    if (!Number(id)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Invalid ID. ID must be a number',
+      });
+    }
+    const modifiedMeal = OrderService.modifyOrder(id, modifyOrder);
+    return res.json({
+      status: 'success',
+      data: modifiedMeal,
+    }).status(201);
+  },
 };
 
 export default OrderController;
