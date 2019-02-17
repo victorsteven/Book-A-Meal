@@ -8,14 +8,14 @@ const OrderController = {
       data: allOrders,
     }).status(200);
   },
-  // addAMeal(req, res) {
-  //   const newMeal = req.body;
-  //   const createdMeal = OrderService.addMeal(newMeal);
-  //   return res.json({
-  //     status: 'success',
-  //     data: createdMeal,
-  //   }).status(201);
-  // },
+  selectOrder(req, res) {
+    const newOrder = req.body;
+    const createdOrder = OrderService.selectOrder(newOrder);
+    return res.json({
+      status: 'success',
+      data: createdOrder,
+    }).status(201);
+  },
 
   // updateAMeal(req, res) {
   //   const updateMeal = req.body;

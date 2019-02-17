@@ -15,15 +15,15 @@ const OrderService = {
     return validOrders;
   },
 
-  // addMeal(meal) {
-  //   const mealLength = dummyData.meals.length;
-  //   const lastId = dummyData.meals[mealLength - 1].id;
-  //   const newId = lastId + 1;
-  //   meal.id = newId;
-  //   meal.menuId = 1;
-  //   dummyData.meals.push(meal);
-  //   return meal;
-  // },
+  selectOrder(order) {
+    const orderLength = dummyData.orders.length;
+    const lastId = dummyData.orders[orderLength - 1].id;
+    const newId = lastId + 1;
+    order.id = newId;
+    order.menuId = 1;
+    dummyData.orders.push(order);
+    return order;
+  },
 
   // updateMeal(id, updatedMeal) {
   //   const theMeal = dummyData.meals.find(oneMeal => oneMeal.id === Number(id));
