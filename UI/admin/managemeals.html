@@ -33,8 +33,36 @@
                 <div class="top-heading">
                  <div>Meal Management</div>
                  <div>
-                     <a href="addmeal.html" class="add_meal"><i class="fa fa-plus"></i> Add Meal</a>
-                     <!-- <a href="addmeal.html" class="fa fa-plus"> Add Meal</a> -->
+                     <!-- <a href="addmeal.html" class="add_meal"><i class="fa fa-plus"></i> Add Meal</a> -->
+                    <button class="trigger add_meal">Add Meal</button>
+                    <div class="modal">
+                        <div class="modal-content">
+                            <span class="close-button">&times;</span>
+                            <!-- <h1>Hello, I am a modal!</h1> -->
+                            <div class="add-container">
+                              <!-- <img src="../images/admin.jpg" class="imgClass" alt=""> -->
+                              <div class="form-area">
+                              <form action="">
+                                  <div class="row">
+                                      <div class="title">
+                                      <input type="text" id="" name="" placeholder="Meal Title..." style="width: 100%; padding: 5px; margin: 5px;">
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="desc">
+                                      <textarea id="" name="" placeholder="Description.." style="height:200px; width: 100%; padding: 5px; margin: 5px;"></textarea>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="add-meal-button">
+                                          <input type="submit" class="addmeal" value="Add Meal" style="width: 100%; background: #4bc970; padding: 5px; margin: 5px;">
+                                      </div>
+                                  </div>
+                              </form>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
             </caption>
@@ -91,6 +119,8 @@
           </table>
         </div>
         </div>
-    <footer class="footer">Copyright 2019</footer>
+    <footer class="footer">Copyright @sunflashChops 2019</footer>
+
+    <script src="../js/addMeal.js"></script>
 </body>
 </html>
