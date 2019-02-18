@@ -5,5 +5,11 @@ module.exports = {
     "no-console": 0,
     "no-param-reassign": [2, {"props": false}],
     "prefer-destructuring": 0
-  }
+  },
+  // "env": {
+  //   "node": true,
+  //   "browser": true,
+  //   "es6": true,
+  //   "mocha": true
+  // },
 };

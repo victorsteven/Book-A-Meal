@@ -18,7 +18,6 @@ const MenuController = {
       data: dayMenu,
     }).status(200);
   },
-  
 };
 
 export default MenuController;
