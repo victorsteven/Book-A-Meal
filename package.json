@@ -3,30 +3,33 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel --presets env -d lib/ src",
-    "start": "nodemon --exec babel-node index",
+    "start": "node ./build/index.js",
+    "dev": "nodemon --exec babel-node ./api/index.js",
     "babel-node": "babel-node index --presets=env",
-    "test": "nyc mocha --exit ./test/**/*.js --compilers js:babel-core/register"
+    "test": "nyc mocha -r esm --exit",
+    "build": "babel -d ./build ./api -s"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "esm": "^3.2.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.2.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "eslint": "^5.13.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.10",
     "nyc": "^13.3.0"
-  },
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "chai": "^4.2.0",
-    "chai-http": "^4.2.1"
   }
 }

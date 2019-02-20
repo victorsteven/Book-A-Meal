@@ -3,6 +3,7 @@ import MenuService from '../services/MenuService';
 const MenuController = {
 
   setMenu(req, res) {
+    // console.log(req.body);
     const newMenu = req.body;
     const createdMenu = MenuService.setMenu(newMenu);
     return res.json({
@@ -13,10 +14,10 @@ const MenuController = {
 
   getMenu(req, res) {
     const dayMenu = MenuService.getMenu();
-    return res.json({
+    return res.status(200).json({
       status: 'success',
       data: dayMenu,
-    }).status(200);
+    });
   },
 };
 
