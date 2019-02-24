@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../api/models/Menu.js"],"names":["Menu","id","name"],"mappings":";;;;;;;;;IAAMA,I,GACJ,gBAAc;AAAA;;AACZ,OAAKC,EAAL,GAAU,IAAV;AACA,OAAKC,IAAL,GAAY,IAAZ;AACD,C;;eAGYF,I","sourcesContent":["class Menu {\n  constructor() {\n    this.id = null;\n    this.name = null;\n  }\n}\n\nexport default Menu;\n"],"file":"Menu.js"}
