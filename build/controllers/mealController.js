@@ -49,8 +49,7 @@ var MealController = {
   getSingleMeal: function getSingleMeal(req, res) {
     var id = req.params.id;
 
-    var foundMeal = _MealService.default.getAMeal(id); // console.log('the found meal: ', foundMeal);
-
+    var foundMeal = _MealService.default.getAMeal(id);
 
     return res.json({
       status: 'success',

@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node build/index.js",
     "dev": "nodemon --exec babel-node ./api/index.js",
     "babel-node": "babel-node index --presets=env",
     "test": "nyc mocha -r esm --exit",
@@ -13,6 +13,11 @@
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
     "codeclimate-report": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
+  
+  "engines": {
+    "node": "10.x"
+  },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
