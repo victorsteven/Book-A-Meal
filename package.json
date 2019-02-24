@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node build/index.js",
     "dev": "nodemon --exec babel-node ./api/index.js",
     "babel-node": "babel-node index --presets=env",
     "test": "nyc mocha -r esm --exit",
@@ -16,7 +16,7 @@
   "engines": {
     "node": "10.15.1"
   },
-  
+
   "keywords": [],
   "author": "",
   "license": "ISC",
