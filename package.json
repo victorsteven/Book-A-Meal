@@ -9,7 +9,9 @@
     "test": "nyc mocha -r esm --exit",
     "build": "babel -d ./build ./api -s",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "report-coverage": "nyc report --reporter=text-lcov | coveralls",
+    "codeclimate-report": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
   "keywords": [],
   "author": "",
