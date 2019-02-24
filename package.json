@@ -13,9 +13,11 @@
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
     "codeclimate-report": "codeclimate-test-reporter < ./coverage/lcov.info"
   },
+  
   "engines": {
-    "node": "10.15.1"
+    "node": "10.x"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
