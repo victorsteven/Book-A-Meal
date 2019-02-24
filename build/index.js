@@ -19,13 +19,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // routes
 var app = (0, _express.default)();
-var PORT = 3000;
+var port = process.env.PORT || 3000;
 app.use(_bodyParser.default.json());
 app.use('/api/v1/meals', _mealsRoute.default);
 app.use('/api/v1/menu', _menusRoute.default);
 app.use('/api/v1/orders', _ordersRoute.default);
-app.listen(PORT, function () {
-  console.log("Server is running on PORT ".concat(PORT));
+app.listen(port, function () {
+  console.log("Server is running on PORT ".concat(port));
 });
 var _default = app;
 exports.default = _default;
