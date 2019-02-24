@@ -8,7 +8,7 @@ import orderRoutes from './routes/ordersRoute';
 
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -17,8 +17,8 @@ app.use('/api/v1/menu', menuRoutes);
 app.use('/api/v1/orders', orderRoutes);
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running on PORT ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on PORT ${port}`);
 });
 
 export default app;
