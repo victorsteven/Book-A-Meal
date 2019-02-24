@@ -67,7 +67,6 @@ describe('Application tests', () => {
         .set('Accept', 'application/json')
         .send(validMeal)
         .end((err, res) => {
-          // console.log('this is the meal; ', res.body.data);
           expect(res.status).to.equal(200);
           expect(res.body.data).to.have.property('name');
           done();
@@ -77,8 +76,6 @@ describe('Application tests', () => {
     it('It should update a meal', (done) => {
       const id = validMeal.id;
       const name = validMeal.name;
-      // console.log('the id of the validmeal: ', id);
-
       chai.request(app)
         .patch(`/api/v1/meals/${id}`)
         .set('Accept', 'application/json')
@@ -112,9 +109,7 @@ describe('Application tests', () => {
         .set('Accept', 'application/json')
         .send(validOrder)
         .end((err, res) => {
-          // console.log('this is the order: ', res.body.data);
           expect(res.status).to.equal(200);
-          // res.body.data.to.be.a('object');
           expect(res.body.data).to.include({
             id: 5,
             name: 'Order1',
