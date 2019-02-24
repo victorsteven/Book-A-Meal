@@ -4,3 +4,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/victorsteven/Book-A-Meal/badge.svg?branch=API)](https://coveralls.io/github/victorsteven/Book-A-Meal?branch=API)
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6e4b97b66eacce568b4f/test_coverage)](https://codeclimate.com/github/victorsteven/Book-A-Meal/test_coverage)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/6e4b97b66eacce568b4f/maintainability)](https://codeclimate.com/github/victorsteven/Book-A-Meal/maintainability)
+
+
+
