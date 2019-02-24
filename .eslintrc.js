@@ -7,10 +7,5 @@ module.exports = {
     "prefer-destructuring": 0,
     "treatUndefinedAsUnspecified": true
   },
-  // "env": {
-  //   "node": true,
-  //   "browser": true,
-  //   "es6": true,
-  //   "mocha": true
-  // },
+
 };
