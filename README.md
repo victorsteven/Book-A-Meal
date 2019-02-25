@@ -7,7 +7,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/6e4b97b66eacce568b4f/maintainability)](https://codeclimate.com/github/victorsteven/Book-A-Meal/maintainability)
 
 
-oollow Through
+Follow Through:
 
 Clone the Repo.
 git clone https://github.com/victorsteven/book-a-meal.git
