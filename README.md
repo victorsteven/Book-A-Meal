@@ -10,7 +10,7 @@
 Follow Through:
 
 Clone the Repo.
-git clone https://github.com/victorsteven/book-a-meal.git
+git clone https://github.com/victorsteven/Book-A-Meal.git
 
 Prerequisites
 
