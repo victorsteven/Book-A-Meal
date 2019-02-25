@@ -20,7 +20,6 @@ const OrderController = {
   modifyOrder(req, res) {
     const modifyOrder = req.body;
     const { id } = req.params;
-
     if (!Number(id)) {
       return res.status(400).json({
         status: 'error',
