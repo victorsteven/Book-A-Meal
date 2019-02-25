@@ -340,5 +340,103 @@
     margin-top: 12px;
 
   }
+
+
+/* .home-page-meal {
+  position: relative;
+
+} */
+.home-content {
+  background-image: url("UI/images/bookmeal.jpg");
+  /* background-color: transparent; */
+}
+
+.sign-in {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+.sign-up {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid #000;
+}
+.chop {
+  height: 50px;
+  width: 50px;
+}
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 260px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  margin-top: 90px;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
   
- 
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #24243e;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+  width: 100%;
+  height: auto;
+  position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+  text-align: center;
+  float: none;
+  }
+}
+

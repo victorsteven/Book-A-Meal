@@ -7,28 +7,204 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" type="text/css" href="../css/managemeals.css">
+
+
     <title>Admin</title>
+    
+    <style>
+        * {
+        box-sizing: border-box;
+        }
+        /* Float four columns side by side */
+        .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        /* .row {margin: 0 -5px;} */
+
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        }
+
+        /* Style the counter cards */
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        }
+
+        .circle_desktop {
+            display: flex;  
+            justify-content: space-around;
+            margin-bottom: 20px;
+            /* width: 60%; */
+        }
+
+        .circle.output{
+            margin-top: 30px;
+            width: 220px;
+            height: 220px;
+            /* border-radius: 50%; */
+            border: 2px solid #f2f2f2;
+            font-size: 40px;
+            line-height: 100px;
+            text-align: center;
+        } 
+        .circle > .forms{
+            font-size: 12px;
+            margin-top: -25px;
+        }
+       
+        @media only screen and (max-width: 768px) {
+            .circle_desktop {
+                display: block;
+            }
+            .circle.output{
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                border: 1px solid #f2f2f2;
+                font-size: 40px;
+                line-height: 100px;
+                text-align: center;
+                margin: auto auto 10px auto;
+            } 
+
+            .circle_layout{
+                margin-left: 100px;
+            }
+
+        }
+        
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="meal" role="navigation">
-            <a href="../../index.html" class="book-meal-home">Book-A-Meal</a>
-            <a href="../pages/menu.html" class="menu-admin">Menu</a>
-        </div>
+            <div class="meal-header" role="navigation">
+                <div>
+                    <a href="../../index.html" class="brand"><img src="../images/chop.png" class="chop" alt=""></a>
+                </div>
+                <div>
+                    
+                </div>
+                <div>
+                    <a href="../authenticate/signin.html" class="sign-in">Sign In</a>
+                    <a href="../authenticate/signup.html" class="sign-up">Sign Up</a>
+                </div>
+            </div>
         </nav>
     </header>
-    <main class="admin-main">
-        <img src="../images/admin.jpg" class="imgClass" alt="">
-        <div class="admin-box">
-            <div class="admin-pages">
-                <h2>Hello Admin!</h2>
-                <a href="managemeals.html" class="meal-options-manage">Manage Meals</a>
-                <a href="setmeals.html" class="meal-options-set">Set Meals</a>
-                <a href="summary.html" class="meal-options-summary">Meal Summary</a>
+
+    <div class="sidebar">
+        <a class="active" href="./admin.html">Manage Meals</a>
+        <a href="./setmeals.html">Set Meal</a>
+        <a href="./summary.html">Meal Summary</a>
+    </div>
+    <div>
+    </div>
+    <div style="float:right; margin-top: 20px; margin-left: 1200px;">
+        <button class="trigger add_meal">Add Meal</button>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <!-- <h1>Hello, I am a modal!</h1> -->
+                <div class="add-container">
+                    <!-- <img src="../images/admin.jpg" class="imgClass" alt=""> -->
+                    <div class="form-area">
+                    <form action="">
+                        <div class="row">
+                            <div class="title">
+                            <input type="text" id="" name="" placeholder="Meal Title..." style="width: 100%; padding: 5px; margin: 5px;">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="desc">
+                            <textarea id="" name="" placeholder="Description.." style="height:200px; width: 100%; padding: 5px; margin: 5px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="add-meal-button">
+                                <input type="submit" class="addmeal" value="Add Meal" style="width: 100%; background: #4bc970; padding: 5px; margin: 5px;">
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class=" circle_layout" style="padding-bottom: 25px;  border-radius: 20px;">
         
-    </main>
+        <div class="circle_desktop">
+            <div class="circle output">Hello sir
+            </div>
+            <div class="circle output">
+                    <img src="../images/meal1.jpeg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="circle output">
+                <div>
+                    <img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
+                </div>
+            </div>
+            <div class="circle output"><img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="circle output"><img src="../images/meal4.jpeg" alt="Avatar" style="width:100%">
+            </div>
+        </div>
+    </div>
+    <div class=" circle_layout" style="padding-bottom: 25px; padding-top: 0px; margin-top: 0px;  border-radius: 20px;">
+        <div class="circle_desktop">
+            <div class="circle output">Hello sir
+            </div>
+            <div class="circle output">
+                    <img src="../images/meal1.jpeg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="circle output"><img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="circle output"><img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
+            </div>
+            <div class="circle output"><img src="../images/meal4.jpeg" alt="Avatar" style="width:100%">
+            </div>
+        </div>
+    </div>
+<script>
+    var modal = document.querySelector(".modal");
+
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+</script>
+
 </body>
 </html>

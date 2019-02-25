@@ -8,93 +8,178 @@
 
     <link rel="stylesheet" type="text/css" href="UI/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-image: url(UI/images/mealer.jpg);
+            background-repeat: no-repeat;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* opacity: 50%; */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* background: rgba(0, 0, 0, 0.3); */
+            z-index: -1;
+        }
+        .home-content {
+            width: 30em;
+            height: 20em;
+            background: white;
+            padding: 20px 20px;
+            margin-left: 50px;
+            margin-top: 7em;
+            background: #f2f2f2;
+            border: 2px solid #f2f2f2;
+
+        }
+
+        .column {
+            /* float: left; */
+            /* width: 100%; */
+            /* padding: 0 10px; */
+            /* height: 100%; */
+            }
+
+            /* Remove extra left and right margins, due to padding */
+            .row {margin: 0 -5px;}
+
+            /* Clear floats after the columns */
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            /* Responsive columns */
+            @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+            }
+
+            .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+            }
+            .chop {
+                height: 50px;
+                width: 50px;
+            }
+            
+            .meal-title {
+                color: white;
+                font-size: 50px;
+                padding: 30px 30px;
+                font-weight: bold;
+            }
+
+            .meal-header {
+                display: flex;
+                justify-content: space-between;
+            }
+            .sign-in {
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 50px;
+                border: 1px solid #000;
+                margin-right: 10px;
+            }
+            .sign-up {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 50px;
+                border: 1px solid #000;
+            }
+
+            .admin {
+                background-color: orange;
+                border: none;
+                color: white;
+                padding: 15px 60px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 2px;
+                font-weight: bold;
+
+            }
+            .admin:hover {
+                background: white;
+                color: black;
+            }
+            .buy {
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 60px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 2px;
+                font-weight: bold;
+
+            }
+            .buy:hover {
+                background: lightslategray;
+            }
+            .card {
+                height: 15em;
+                width: 30em;
+                margin: auto auto;
+                background: transparent;
+            }
+    </style>
 </head>
 <body>
     <header>
       <nav>
-        <div class="meal" role="navigation">
-          <a href="#" class="brand">Book-A-Meal</a>
-          <a href="UI/admin/admin.html" class="book-meal">Admin</a>
-          <a href="UI/pages/menu.html" class="menu">Menu</a>
-          <a href="UI/authenticate/signin.html" class="signin">Sign In</a>
-          <a href="UI/authenticate/signup.html" class="signup">Sign Up</a>
+        <div class="meal-header" role="navigation">
+            <div>
+                <a href="#" class="brand"><img src="./UI/images/chop.png" class="chop" alt=""></a>
+                <!-- <a href="UI/admin/admin.html" class="book-meal">Admin</a> -->
+                <!-- <a href="UI/pages/menu.html" class="menu">Menu</a> -->
+            </div>
+            <div>
+                <a href="UI/authenticate/signin.html" class="sign-in">Sign In</a>
+                <a href="UI/authenticate/signup.html" class="sign-up">Sign Up</a>
+            </div>
       </div>
       </nav>
     </header>
-    <div class="">
-        <div class="row-food">
-        <h1 class="meal-heading">Welcome to SunflashChops</h1>
-        <div class="flex-it">
-            <div class="card">
-                <img src="UI/images/meal1.jpeg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <p>
-                        <div class="meal-name">Nice Food</div>
-                        <div>
-                            <span class="meal-amount">#4,000</span>
-                        </div>
-                        <div>
-                            <!-- <button class="meal-order">Order</button> -->
-                            <a href="UI/user/buymeal.html" class="meal-order">Order</a>
-                        </div>
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="card">
-                <img src="UI/images/meal2.jpeg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <p>
-                        <div class="meal-name">Nice Food</div>
-                        <div>
-                            <span class="meal-amount">#4,000</span>
-                        </div>
-                        <div>
-                            <!-- <button class="meal-order">Order</button> -->
-                            <a href="UI/user/buymeal.html" class="meal-order">Order</a>
-
-                        </div>
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="card">
-                <img src="UI/images/meal3.jpeg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <p>
-                        <div class="meal-name">Nice Food</div>
-                        <div>
-                            <span class="meal-amount">#4,000</span>
-                        </div>
-                        <div>
-                            <!-- <button class="meal-order">Order</button> -->
-                            <a href="UI/user/buymeal.html" class="meal-order">Order</a>
-
-                        </div>
-                    </p>
-                    
-                </div>
-            </div>
-            <div class="card">
-                <img src="UI/images/meal4.jpeg" alt="Avatar" style="width:100%">
-                <div class="container">
-                    <p>
-                        <div class="meal-name">Nice Food</div>
-                        <div>
-                            <span class="meal-amount">#4,000</span>
-                        </div>
-                        <div>
-                            <!-- <button class="meal-order">Order</button> -->
-                            <a href="UI/user/buymeal.html" class="meal-order">Order</a>
-
-                        </div>
-                    </p>
-                    
-                </div>
-            </div>
+    <div class="card">
+        <div class="meal-title">Sunflash Meals</div>
+        <div>
+            <a href="UI/admin/admin.html" class="admin">Admin</a>
+            <a href="UI/pages/menu.html" class="buy">Buy Meal</a>
         </div>
     </div>
-    </div>
-    <footer class="footer">Copyright 2019</footer>
+        
 </body>
 </html>

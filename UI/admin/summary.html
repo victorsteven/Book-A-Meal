@@ -14,93 +14,156 @@
     <title>Manage Meals</title>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <nav>
           <div class="meal" role="navigation">
             <a href="../../index.html" class="brand">Book-A-Meal</a>
             <a href="managemeals.html" class="meal-options">Manage Meals</a>
             <a href="setmeals.html" class="meal-options-setter">Sets Meals</a>
             <a href="summary.html" class="book-meal-summary">Meal Summary</a>
-
             <a href="../pages/menu.html" class="menu">Menu</a>
-
         </div>
         </nav>
-      </header>
+      </header> -->
+
+      <header>
+            <nav>
+                <div class="meal-header" role="navigation">
+                    <div>
+                        <a href="../../index.html" class="brand"><img src="../images/chop.png" class="chop" alt=""></a>
+                    </div>
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <a href="../authenticate/signin.html" class="sign-in">Sign In</a>
+                        <a href="../authenticate/signup.html" class="sign-up">Sign Up</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    
+        <div class="sidebar">
+            <a class="active" href="./admin.html">Manage Meals</a>
+            <!-- <a class="trigger">Add Meal</a> -->
+            <!-- <button class="trigger add_meal">Add Meal</button> -->
+            <a href="./setmeals.html">Set Meal</a>
+            <a href="./summary.html">Meal Summary</a>
+
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="add-container">
+                        <div class="form-area">
+                        <form action="">
+                            <div class="row">
+                                <div class="title">
+                                <input type="text" id="" name="" placeholder="Meal Title..." style="width: 100%; padding: 5px; margin: 5px;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="desc">
+                                <textarea id="" name="" placeholder="Description.." style="height:200px; width: 100%; padding: 5px; margin: 5px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="add-meal-button">
+                                    <input type="submit" class="addmeal" value="Add Meal" style="width: 100%; background: #4bc970; padding: 5px; margin: 5px;">
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <div>
     
-    <div class="manage">
-        <div class="suma">Summary of Orders</div>
-          <table class="summary">
-            <tr>
-              <th>Date</th>
-                <th>Orders</th>
-                <th>Description</th>
-                <th>Total Amount(N)</th>
+    <div class="manage" style="width: 75%; margin-left:300px;">
+      <table>
+            <caption>
+                <div class="top-heading">
+                 <div>Meal Summary</div>
+                 <div>
+                     <!-- <a href="addmeal.html" class="add_meal"><i class="fa fa-plus"></i> Add Meal</a> -->
+                    <!-- <button class="trigger add_meal">Add Meal</button> -->
+                    
+                </div>
+                </div>
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col">S/N</th>
+                <th scope="col">Meal</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="S/N">1</td>
+                <td data-label="Meal">Rice</td>
+                <td data-label="Description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                <td data-label="Action">
+                    <a href="" class="edit_meal"><i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit</a> 
+                    <a href="" class="delete_meal"><i class="fa fa-trash" style="margin-right: 5px;"></i>Delete</a>
+                </td>
+              </tr>
+
+              <tr>
+                <td data-label="S/N">2</td>
+                <td data-label="Meal">Plantain and Stew</td>
+                <td data-label="Description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                <td data-label="Action">
+                    <a href="" class="edit_meal"><i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit</a> 
+                    <a href="" class="delete_meal"><i class="fa fa-trash" style="margin-right: 5px;"></i>Delete</a>
+                </td>
+             </tr>
+
+             <tr>
+                <td data-label="S/N">3</td>
+                <td data-label="Meal">Indomie and Fried Egg</td>
+                <td data-label="Description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                <td data-label="Action">
+                    <a href="" class="edit_meal"><i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit</a> 
+                    <a href="" class="delete_meal"><i class="fa fa-trash" style="margin-right: 5px;"></i>Delete</a>
+                </td>
             </tr>
+
             <tr>
-                <td>2019-02-02</td>
-                <td>30</td>
-                <td>This is the orders description</td>
-                <td>48,000</td>
+                <td data-label="S/N">4</td>
+                <td data-label="Meal">Amala and Ewedu</td>
+                <td data-label="Description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                <td data-label="Action">
+                    <a href="" class="edit_meal"><i class="fa fa-pencil" style="margin-right: 5px;"></i>Edit</a> 
+                    <a href="" class="delete_meal"><i class="fa fa-trash" style="margin-right: 5px;"></i>Delete</a>
+                </td>
             </tr>
-            <tr>
-                <td>2019-02-03</td>
-                <td>40</td>
-                <td>This is the orders description</td>
-                <td>40,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-04</td>
-                <td>80</td>
-                <td>This is the orders description</td>
-                <td>32,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-05</td>
-                <td>110</td>
-                <td>This is the orders description</td>
-                <td>100,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-06</td>
-                <td>15</td>
-                <td>This is the orders description</td>
-                <td>20,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-07</td>
-                <td>90</td>
-                <td>This is the orders description</td>
-                <td>110,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-08</td>
-                <td>45</td>
-                <td>This is the orders description</td>
-                <td>15,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-09</td>
-                <td>89</td>
-                <td>This is the orders description</td>
-                <td>45,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-10</td>
-                <td>12</td>
-                <td>This is the orders description</td>
-                <td>55,000</td>
-            </tr>
-            <tr>
-                <td>2019-02-11</td>
-                <td>18</td>
-                <td>This is the orders description</td>
-                <td>35,000</td>
-            </tr>
+            </tbody>
           </table>
         </div>
         </div>
-    <footer class="footer">Copyright 2019</footer>
+    <!-- <footer class="footer">Copyright @sunflashChops 2019</footer> -->
+
+<script>
+    var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+</script>
 </body>
 </html>
