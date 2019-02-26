@@ -13,86 +13,109 @@
     <title>Admin</title>
     
     <style>
-        * {
-        box-sizing: border-box;
-        }
-        /* Float four columns side by side */
-        .column {
-        float: left;
-        width: 25%;
-        padding: 0 10px;
-        }
-
-        /* Remove extra left and right margins, due to padding */
-        /* .row {margin: 0 -5px;} */
-
-        /* Clear floats after the columns */
-        .row:after {
-        content: "";
-        display: table;
-        clear: both;
-        }
-
-        /* Responsive columns */
-        @media screen and (max-width: 600px) {
-        .column {
-            width: 100%;
-            display: block;
-            margin-bottom: 20px;
-        }
-        }
-
-        /* Style the counter cards */
-        .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        padding: 16px;
-        text-align: center;
-        background-color: #f1f1f1;
-        }
-
-        .circle_desktop {
-            display: flex;  
-            justify-content: space-around;
-            margin-bottom: 20px;
-            /* width: 60%; */
-        }
-
-        .circle.output{
-            margin-top: 30px;
-            width: 220px;
-            height: 220px;
-            /* border-radius: 50%; */
-            border: 2px solid #f2f2f2;
-            font-size: 40px;
-            line-height: 100px;
-            text-align: center;
-        } 
-        .circle > .forms{
-            font-size: 12px;
-            margin-top: -25px;
-        }
-       
-        @media only screen and (max-width: 768px) {
-            .circle_desktop {
-                display: block;
+        /* header {
+            grid-area: header;
+            background-color: #fed330;
+            padding: 20px;
+            } */
+            article {
+            grid-area: content;
+            background-color: #f2f2f2;
+            padding: 20px 20px 20px 0px;
             }
-            .circle.output{
-                width: 240px;
-                height: 240px;
-                border-radius: 50%;
-                border: 1px solid #f2f2f2;
-                font-size: 40px;
-                line-height: 100px;
+            aside {
+            grid-area: sidebar;
+            background-color: #f2f2f2;
+            }
+            /* footer {
+            padding: 20px;
+            grid-area: footer;
+            background-color: #fd9644;
+            } */
+            .wrapper {
+            display: grid;
+            grid-gap: 40px;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                "header  header"
+                "sidebar content"
+                "footer  footer";
+            margin-right: 20px;
+            margin-left: 20px;
+            
+            }
+           a {
+                text-decoration: none;
+                
+            }
+            .active {
+                background: #24243e;
+                color: #fff;
+            }
+            /* .notactive {
+                background: gray;
+                color: #fff;
+            } */
+
+            aside > ul {
+                margin-left: -40px;
+            }
+
+
+            .cta {
+                background-color: #20bf6b;
+                color: #fff;
                 text-align: center;
-                margin: auto auto 10px auto;
-            } 
+                margin: 0;
+                padding: 10px;
+                }
 
-            .circle_layout{
-                margin-left: 100px;
+            .listing li {
+            border: 1px solid #ffe066;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            }
+            /* .listing .cta {
+            margin-top: auto;
+            border-top: 1px solid #ffe066;
+            padding: 10px;
+            text-align: center;
+            } */
+            .listing .body {
+            padding: 10px;
+            }
+            .listing {
+            list-style: none;
+            margin: 2em;
+            display: grid;
+            grid-gap: 20px;
+            grid-auto-flow: dense;
+            grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+            }
+            .listing .wide {
+            grid-column-end: span 2;
             }
 
-        }
-        
+            /* .container {
+                display: grid;
+                grid-template-columns: 200px 200px 200px 200px;
+                grid-template-rows: 300px 300px;
+            } */
+            .container {
+                display: grid;
+                grid-template-columns: 200px 200px 200px 200px;
+                grid-template-rows: 300px 300px;
+            }
+            .item1 {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+            .item6 {
+                grid-column-start: 3;
+                grid-column-end: 5;
+            }
+                        
     </style>
 </head>
 <body>
@@ -113,45 +136,75 @@
         </nav>
     </header>
 
-    <div class="sidebar">
-        <a class="active" href="./admin.html">Manage Meals</a>
-        <a href="./setmeals.html">Set Meal</a>
-        <a href="./summary.html">Meal Summary</a>
+    <div class="wrapper">
+        <article>
+            <ul class="listing">
+                <li>
+                    <img src="../images/meal1.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+                <li>
+                    <img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+                    <li>
+                    <img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+                <li>
+                    <img src="../images/meal4.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+                <li>
+                    <img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+                    <li>
+                    <img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
+                    <div class="body"><p>This is Fried Rice and Jellof. Set it as an option today</p>
+                        <span style="margin: auto auto;">Price: N 5,000</span>
+                    </div>
+                    
+                    <div class="cta"><a href="" class="color: #fff!important;">Put in Menu</a></div>
+                </li>
+            </ul>
+        </article>
+        <aside>
+            <ul>
+                <div style="padding: 20px; margin: 0px 0px;" class="notactive">
+                    <a class="notactive" href="./admin.html">Manage Meals</a>
+                </div>
+                <div style="padding: 20px; margin-top: 1px;" class="active">
+                    <a class="active" href="./setmeals.html">Set Meal</a>
+                </div>
+                <div style="padding: 20px; margin-top: 1px;" class="notactive">
+                    <a class="notactive" href="./summary.html">Meal Summary</a>
+                </div>
+            </ul>
+        </aside>
     </div>
 
-    <div class=" circle_layout" style="padding-bottom: 25px;  border-radius: 20px;">
-        <div class="circle_desktop">
-            <div class="circle output">Hello sir
-            </div>
-            <div class="circle output">
-                    <img src="../images/meal1.jpeg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="circle output">
-                <div>
-                    <img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
-                </div>
-            </div>
-            <div class="circle output"><img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="circle output"><img src="../images/meal4.jpeg" alt="Avatar" style="width:100%">
-            </div>
-        </div>
-    </div>
-    <div class=" circle_layout" style="padding-bottom: 25px;  border-radius: 20px;">
-        <div class="circle_desktop">
-            <div class="circle output">Hello sir
-            </div>
-            <div class="circle output">
-                    <img src="../images/meal1.jpeg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="circle output"><img src="../images/meal2.jpeg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="circle output"><img src="../images/meal3.jpeg" alt="Avatar" style="width:100%">
-            </div>
-            <div class="circle output"><img src="../images/meal4.jpeg" alt="Avatar" style="width:100%">
-            </div>
-        </div>
-    </div>
+    
 <script>
     var modal = document.querySelector(".modal");
 
