@@ -1,11 +1,29 @@
-class Meal {
-  constructor() {
-    this.id = null;
-    this.name = null;
-    this.size = null;
-    this.price = null;
-    this.menuId = null;
-  }
-}
+module.exports = (sequelize, DataTypes) => {
+  const Meal = sequelize.define('Meal', {
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    size: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+    menuId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  });
 
-export default Meal;
+  Meal.associate = (models) => {
+    // associations can be defined here
+    Meal.belongsTo(models.Menu, {
+      foreignKey: 'mealId',
+      onDelete: 'CASCADE',
+    });
+  };
+  return Meal;
+};
