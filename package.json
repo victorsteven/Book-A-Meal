@@ -6,7 +6,7 @@
     "start": "node build/index.js",
     "dev": "nodemon --exec babel-node ./api/index.js",
     "babel-node": "babel-node index --presets=env",
-    "test": "nyc mocha -r esm --exit",
+    "test": "set NODE_ENV=test&& npm run build&& sequelize db:migrate:undo:all&& sequelize db:migrate&& sequelize db:seed:all&& nyc mocha ./api/test/test.js -r esm --exit",
     "build": "babel -d ./build ./api -s",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "report-coverage": "nyc report --reporter=text-lcov | coveralls",
