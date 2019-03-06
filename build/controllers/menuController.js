@@ -1,35 +1,30 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
+var Menu = require('../models').Menu;
 
-var _MenuService = _interopRequireDefault(require("../services/MenuService"));
+var Meal = require('../models').Meal;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var MenuController = {
-  setMenu: function setMenu(req, res) {
-    // console.log(req.body);
-    var newMenu = req.body;
-
-    var createdMenu = _MenuService.default.setMenu(newMenu);
-
-    return res.json({
-      status: 'success',
-      data: createdMenu
-    }).status(201);
+module.exports = {
+  create: function create(req, res) {
+    return Menu.create({
+      name: req.body.name
+    }).then(function (menu) {
+      return res.status(201).send(menu);
+    }).catch(function (error) {
+      return res.status(400).send(error);
+    });
   },
-  getMenu: function getMenu(req, res) {
-    var dayMenu = _MenuService.default.getMenu();
-
-    return res.status(200).json({
-      status: 'success',
-      data: dayMenu
+  list: function list(req, res) {
+    return Menu.findAll({
+      include: [{
+        model: Meal,
+        as: 'meals'
+      }]
+    }).then(function (menus) {
+      return res.status(200).send(menus);
+    }).catch(function (error) {
+      return res.status(400).send(error);
     });
   }
 };
-var _default = MenuController;
-exports.default = _default;
 //# sourceMappingURL=menuController.js.map

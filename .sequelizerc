@@ -1,8 +1,17 @@
 const path = require('path');
 
+if (process.env != 'production'){
+ module.exports = {
+   "config": path.resolve('./api/config', 'config.js'),
+   "models-path": path.resolve('./api/models'),
+   "seeders-path": path.resolve('./api/seeders'),
+   "migrations-path": path.resolve('./api/migrations')
+ }; 
+}
+
 module.exports = {
-    "config": path.resolve('./api/config', 'config.json'),
-    "models-path": path.resolve('./api/models'),
-    "seeders-path": path.resolve('./api/seeders'),
-    "migrations-path": path.resolve('./api/migrations')
+    "config": path.resolve('./build/config', 'config.json'),
+    "models-path": path.resolve('./build/models'),
+    "seeders-path": path.resolve('./build/seeders'),
+    "migrations-path": path.resolve('./build/migrations')
 };

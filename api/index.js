@@ -1,10 +1,14 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from 'morgan';
+import config from 'dotenv';
 
 // routes
 import mealRoutes from './routes/mealRoutes';
 import menuRoutes from './routes/menuRoute';
+
+config.config();
+
 // import orderRoutes from './routes/ordersRoute';
 
 
