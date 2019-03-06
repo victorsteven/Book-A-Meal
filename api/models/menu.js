@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+  }, {});
   Menu.associate = (models) => {
     // associations can be defined here
     Menu.hasMany(models.Meal, {

@@ -1,24 +1,23 @@
-import MenuService from '../services/MenuService';
+const Menu = require('../models').Menu;
+const Meal = require('../models').Meal;
 
-const MenuController = {
-
-  setMenu(req, res) {
-    // console.log(req.body);
-    const newMenu = req.body;
-    const createdMenu = MenuService.setMenu(newMenu);
-    return res.json({
-      status: 'success',
-      data: createdMenu,
-    }).status(201);
+module.exports = {
+  create(req, res) {
+    return Menu.create({
+      name: req.body.name,
+    })
+      .then(menu => res.status(201).send(menu))
+      .catch(error => res.status(400).send(error));
   },
 
-  getMenu(req, res) {
-    const dayMenu = MenuService.getMenu();
-    return res.status(200).json({
-      status: 'success',
-      data: dayMenu,
-    });
+  list(req, res) {
+    return Menu.findAll({
+      include: [{
+        model: Meal,
+        as: 'meals',
+      }],
+    })
+      .then(menus => res.status(200).send(menus))
+      .catch(error => res.status(400).send(error));
   },
 };
-
-export default MenuController;

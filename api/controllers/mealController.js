@@ -1,61 +1,75 @@
-import MealService from '../services/MealService';
+// import Meal from '../models/meal';
+const Meal = require('../models').Meal;
 
-const MealController = {
-  fetchAllMeals(req, res) {
-    const allMeals = MealService.fetchAllMeals();
-    return res.json({
-      status: 'success',
-      data: allMeals,
-    }).status(200);
-  },
-  addAMeal(req, res) {
-    const newMeal = req.body;
-    const createdMeal = MealService.addMeal(newMeal);
-    return res.json({
-      status: 'success',
-      data: createdMeal,
-    }).status(201);
-  },
-
-  updateAMeal(req, res) {
-    const updateMeal = req.body;
-    const { id } = req.params;
-    if (!Number(id)) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'Invalid ID. ID must be a number',
-      });
-    }
-    const updatedMeal = MealService.updateMeal(id, updateMeal);
-    return res.json({
-      status: 'success',
-      data: updatedMeal,
-    }).status(201);
+module.exports = {
+  create(req, res) {
+    // return req.params
+    console.log(req.params);
+    // return req.params.menuId;
+    return Meal.create({
+      name: req.body.name,
+      size: req.body.size,
+      price: req.body.price,
+      menuId: req.params.menuId,
+    })
+      .then(meal => res.status(201).send(meal))
+      .catch(error => res.status(400).send(error));
   },
 
-  getSingleMeal(req, res) {
-    const { id } = req.params;
-    const foundMeal = MealService.getAMeal(id);
-    return res.json({
-      status: 'success',
-      data: foundMeal,
-    }).status(200);
+  list(req, res) {
+    return Meal.findAll({})
+      .then(todos => res.status(200).send(todos))
+      .catch(error => res.status(400).send(error));
+  },
+
+  updateMeal(req, res) {
+    console.log(req.params);
+    return Meal.find({
+      where: {
+        id: req.params.mealId,
+        menuId: req.params.menuId,
+      },
+    })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(404).send({
+            message: 'meal not found',
+          });
+        }
+        console.log('we have the meal', meal);
+        return Meal
+          .update({
+            name: req.body.name || meal.name,
+            size: req.body.size || meal.size,
+            price: req.body.price || meal.price,
+          })
+          .then(updated => res.status(200).send(updated))
+          .catch(error => res.status(400).send(error));
+      })
+      .catch(error => res.status(400).send(error));
   },
 
   deleteMeal(req, res) {
-    const { id } = req.params;
-    if (!Number(id)) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'Invalid ID. ID must be a number',
-      });
-    }
-    const deletedMeal = MealService.deleteMeal(id);
-    return res.json({
-      status: 'success',
-      data: deletedMeal,
-    }).status(201);
+    return Meal
+      .find({
+        where: {
+          id: req.params.mealId,
+          menuId: req.params.menuId,
+        },
+      })
+      .then((meal) => {
+        if (!meal) {
+          return res.status(404).send({
+            message: 'meal not found',
+          });
+        }
+        return Meal
+          .destroy()
+          .then(() => res.status(200).send({
+            message: 'deleted',
+          }))
+          .catch(error => res.status(400).send(error));
+      })
+      .catch(error => res.status(400).send(error));
   },
 };
-
-export default MealController;

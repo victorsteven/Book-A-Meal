@@ -12,17 +12,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
-    menuId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-  });
-
+  }, {});
   Meal.associate = (models) => {
     // associations can be defined here
-    Meal.belongsTo(models.Menu, {
-      foreignKey: 'mealId',
-      onDelete: 'CASCADE',
+    Meal.belongsTo(models.Meal, {
+      foreignKey: 'menuId',
     });
   };
   return Meal;
