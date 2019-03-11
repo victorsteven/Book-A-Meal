@@ -1,40 +1,26 @@
+// import './config/config';
+
 import express from 'express';
-import bodyParser from 'body-parser';
 import logger from 'morgan';
-import config from 'dotenv';
-
-// routes
-import mealRoutes from './routes/mealRoutes';
-import menuRoutes from './routes/menuRoute';
-
-config.config();
-
-// import orderRoutes from './routes/ordersRoute';
-
+import { json, urlencoded } from 'body-parser';
 
 const app = express();
+const port = process.env.PORT || 6000;
 
 app.use(logger('dev'));
 
-const port = process.env.PORT || 3000;
+app.use(json());
+app.use(urlencoded({ extended: false }));
 
-app.use(bodyParser.json());
 
-app.use('/api/v1', mealRoutes);
-app.use('/api/v1/menu', menuRoutes);
-// app.use('/api/v1/orders', orderRoutes);
+require('./routes/index')(app);
 
+app.get('*', (req, res) => res.status(200).send({
+  message: 'Welcome to the beginning of nothingness.',
+}));
 
 app.listen(port, () => {
   console.log(`Server is running on PORT ${port}`);
 });
 
 export default app;
-
-
-// const http = require('http');
-// const app = require('../app');
-// const port = parseInt(process.env.PORT, 10) || 4000;
-// app.set('port', port);
-// const server = http.createServer(app);
-// server.listen(port);

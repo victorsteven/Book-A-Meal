@@ -1,7 +1,7 @@
-import menu from './menuController';
-import meal from './mealController';
+import menus from './menus';
+import meals from './meals';
 
 module.exports = {
-  menu,
-  meal,
+  menus,
+  meals,
 };
