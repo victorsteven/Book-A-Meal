@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../api/controllers/index.js"],"names":["module","exports","menus","meals"],"mappings":";;AAAA;;;;AACA;;;;;;AAEAA,OAAOC,OAAP,GAAiB;AACfC,wBADe;AAEfC;AAFe,CAAjB","file":"index.js","sourcesContent":["import menus from './menus';\nimport meals from './meals';\n\nmodule.exports = {\n  menus,\n  meals,\n};\n"]}
