@@ -1,17 +1,19 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../api/index';
-import { mockMenu, mockMeals, mockOrders } from './mockResult';
+// import { mockMenu, mockMeals, mockOrders } from './mockResult';
+// const Menu = require('../api/models/menu').Menu;
 
 chai.use(chaiHttp);
 const { expect } = chai;
 const should = chai.should();
-const { menu } = mockMenu;
-const { validMeal } = mockMeals;
-const { validOrder } = mockOrders;
+// const { menu } = mockMenu;
+// const { validMeal } = mockMeals;
+// const { validOrder } = mockOrders;
 
-
+// eslint-disable-next-line no-undef
 describe('Application tests', () => {
+  // eslint-disable-next-line no-undef
   describe('MENU', () => {
     // it('It should retrieve the menu for the day', (done) => {
     //   chai.request(app)
@@ -24,20 +26,46 @@ describe('Application tests', () => {
     //       done();
     //     });
     // });
-    it('It should create the menu for the day', (done) => {
+    // eslint-disable-next-line no-undef
+    // it('It should create the menu for the day', (done) => {
+    //   chai.request(app)
+    //     .post('/api/v1/menus')
+    //     .set('Accept', 'application/json')
+    //     .send(menu)
+    //     .end((err, res) => {
+    //       expect(res.status).to.equal(201);
+    //       res.body.should.have.property('id');
+    //       res.body.should.have.property('name');
+    //       done();
+    //     });
+    // });
+
+    // eslint-disable-next-line no-undef
+    it('should create a new menu', (done) => {
+      const name = 'Food menu';
       chai.request(app)
-        .post('/api/v1/menu')
-        .set('Accept', 'application/json')
-        .send(menu)
+        .post('/api/v1/menus')
+      // .set('x-auth', users[0].tokens[0].token)
+        .send({ name })
+        // eslint-disable-next-line consistent-return
         .end((err, res) => {
-          expect(res.status).to.equal(201);
-          res.body.should.have.property('id');
-          res.body.should.have.property('name');
+          if (err) {
+            return done(err);
+          }
+          expect(res.status).equal(201);
+          expect(res.body.name).equal(name);
           done();
+
+          // Menu.find({ name }).then((menus) => {
+          //   expect(menus.length).equal(1);
+          //   expect(menus[0].text).equal(name);
+          //   done();
+          // }).catch(e => done(e));
         });
     });
   });
 
+  // eslint-disable-next-line no-undef
   describe('MEALS', () => {
     // it('It should get all meals', (done) => {
     //   chai.request(app)

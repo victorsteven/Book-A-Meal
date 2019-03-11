@@ -14,12 +14,6 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
-  // list(req, res){
-  //     return Todo
-  //         .all()
-  //         .then(todos => res.status(200).send(todos))
-  //         .catch(error => res.status(400).send(error));
-  // }
   list(req, res) {
     return Menu
       .findAll({
