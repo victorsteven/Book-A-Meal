@@ -22,7 +22,7 @@ module.exports = (app) => {
   // For any other request method on todo items, we're going to return "Method Not Allowed"
   app.all('/api/v1/menus/:menuId/items', (req, res) => {
     res.status(405).send({
-      message: 'Method not allowed',
+      message: 'Welcome to the application. Start exploring the endpoints',
     });
   });
 };
