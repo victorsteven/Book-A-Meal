@@ -1,13 +1,55 @@
-import config from './config.json';
+const config = require('dotenv');
 
-// the default env is production, which for heroku
-const env = process.env.NODE_ENV || 'development';
-console.log('env *******', env);
+config.config();
 
-if (env === 'development' || env === 'test') {
-  // Object.keys() gets the object and return it as an array
-  const envConfig = config[env];
-  Object.keys(envConfig).forEach((key) => {
-    process.env[key] = envConfig[key];
-  });
-}
+module.exports = {
+  development: {
+    username: 'codepreneur',
+    password: null,
+    database: 'betachop',
+    host: '127.0.0.1',
+    dialect: 'postgres',
+    port: 5432,
+    operatorsAliases: false,
+    ssl: true,
+    define: {
+      timestamps: false,
+    },
+    dialectOption: {
+      ssl: true,
+      native: true,
+    },
+  },
+  test: {
+    username: 'codepreneur',
+    password: null,
+    database: 'betachop',
+    host: '127.0.0.1',
+    dialect: 'postgres',
+    port: 5432,
+    ssl: true,
+    operatorsAliases: false,
+    define: {
+      timestamps: false,
+    },
+    dialectOption: {
+      ssl: true,
+      native: true,
+    },
+  },
+  production: {
+    environment: 'production',
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres',
+    port: 5432,
+    ssl: true,
+    operatorsAliases: false,
+    dialectOption: {
+      ssl: true,
+      native: true,
+    },
+    define: {
+      timestamps: false,
+    },
+  },
+};
