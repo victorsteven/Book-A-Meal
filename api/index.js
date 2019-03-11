@@ -1,21 +1,23 @@
+// import './config/config';
+
 import express from 'express';
-import bodyParser from 'body-parser';
-
-// routes
-import mealRoutes from './routes/mealsRoute';
-import menuRoutes from './routes/menusRoute';
-import orderRoutes from './routes/ordersRoute';
-
+import logger from 'morgan';
+import { json, urlencoded } from 'body-parser';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 6000;
 
-app.use(bodyParser.json());
+app.use(logger('dev'));
 
-app.use('/api/v1/meals', mealRoutes);
-app.use('/api/v1/menu', menuRoutes);
-app.use('/api/v1/orders', orderRoutes);
+app.use(json());
+app.use(urlencoded({ extended: false }));
 
+
+require('./routes/index')(app);
+
+app.get('*', (req, res) => res.status(200).send({
+  message: 'Welcome to the beginning of nothingness.',
+}));
 
 app.listen(port, () => {
   console.log(`Server is running on PORT ${port}`);
