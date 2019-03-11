@@ -1,8 +1,11 @@
 // import './config/config';
+import config from 'dotenv';
 
 import express from 'express';
 import logger from 'morgan';
 import { json, urlencoded } from 'body-parser';
+
+config.config();
 
 const app = express();
 const port = process.env.PORT || 6000;
